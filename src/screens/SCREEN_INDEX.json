@@ -1,0 +1,276 @@
+[
+  {
+    "screenId": "d65dfde5a25a43efafb5a053eabc846e",
+    "title": "Pause Overlay",
+    "componentName": "PauseOverlay",
+    "file": "src/screens/PauseOverlay.tsx",
+    "buttons": 10,
+    "inputs": 0,
+    "links": 0,
+    "actions": [
+      {
+        "id": "button-1-1",
+        "kind": "button",
+        "label": "Button 1",
+        "index": 0
+      },
+      {
+        "id": "button-2-2",
+        "kind": "button",
+        "label": "Button 2",
+        "index": 1
+      },
+      {
+        "id": "game-3",
+        "kind": "button",
+        "label": "GAME",
+        "index": 2
+      },
+      {
+        "id": "levels-4",
+        "kind": "button",
+        "label": "LEVELS",
+        "index": 3
+      },
+      {
+        "id": "status-5",
+        "kind": "button",
+        "label": "STATUS",
+        "index": 4
+      },
+      {
+        "id": "menu-6",
+        "kind": "button",
+        "label": "MENU",
+        "index": 5
+      },
+      {
+        "id": "resume-7",
+        "kind": "button",
+        "label": "RESUME",
+        "index": 6
+      },
+      {
+        "id": "restart-level-8",
+        "kind": "button",
+        "label": "RESTART LEVEL",
+        "index": 7
+      },
+      {
+        "id": "options-9",
+        "kind": "button",
+        "label": "OPTIONS",
+        "index": 8
+      },
+      {
+        "id": "quit-to-menu-10",
+        "kind": "button",
+        "label": "QUIT TO MENU",
+        "index": 9
+      }
+    ]
+  },
+  {
+    "screenId": "d567f1d58f3d433a9a8bba4b6c24da22",
+    "title": "Game Options",
+    "componentName": "GameOptions",
+    "file": "src/screens/GameOptions.tsx",
+    "buttons": 2,
+    "inputs": 4,
+    "links": 0,
+    "actions": [
+      {
+        "id": "cancel-1",
+        "kind": "button",
+        "label": "Cancel",
+        "index": 0
+      },
+      {
+        "id": "apply-changes-2",
+        "kind": "button",
+        "label": "Apply Changes",
+        "index": 1
+      }
+    ]
+  },
+  {
+    "screenId": "a42acc2cab564ce4bed24ef0e426e8bb",
+    "title": "Main Menu",
+    "componentName": "MainMenu",
+    "file": "src/screens/MainMenu.tsx",
+    "buttons": 11,
+    "inputs": 0,
+    "links": 0,
+    "actions": [
+      {
+        "id": "button-1-1",
+        "kind": "button",
+        "label": "Button 1",
+        "index": 0
+      },
+      {
+        "id": "button-2-2",
+        "kind": "button",
+        "label": "Button 2",
+        "index": 1
+      },
+      {
+        "id": "button-3-3",
+        "kind": "button",
+        "label": "Button 3",
+        "index": 2
+      },
+      {
+        "id": "start-game-4",
+        "kind": "button",
+        "label": "Start Game",
+        "index": 3
+      },
+      {
+        "id": "resume-session-5",
+        "kind": "button",
+        "label": "Resume Session",
+        "index": 4
+      },
+      {
+        "id": "tutorial-6",
+        "kind": "button",
+        "label": "Tutorial",
+        "index": 5
+      },
+      {
+        "id": "exit-7",
+        "kind": "button",
+        "label": "Exit",
+        "index": 6
+      },
+      {
+        "id": "game-8",
+        "kind": "button",
+        "label": "GAME",
+        "index": 7
+      },
+      {
+        "id": "levels-9",
+        "kind": "button",
+        "label": "LEVELS",
+        "index": 8
+      },
+      {
+        "id": "status-10",
+        "kind": "button",
+        "label": "STATUS",
+        "index": 9
+      },
+      {
+        "id": "menu-11",
+        "kind": "button",
+        "label": "MENU",
+        "index": 10
+      }
+    ]
+  },
+  {
+    "screenId": "295c3e6ee17f424ba1ca83ae3bc5f2d7",
+    "title": "Controls Help",
+    "componentName": "ControlsHelp",
+    "file": "src/screens/ControlsHelp.tsx",
+    "buttons": 1,
+    "inputs": 0,
+    "links": 0,
+    "actions": [
+      {
+        "id": "back-to-menu-1",
+        "kind": "button",
+        "label": "Back to Menu",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "screenId": "8e881607744f4987bded45af888e299d",
+    "title": "Game Over",
+    "componentName": "GameOver",
+    "file": "src/screens/GameOver.tsx",
+    "buttons": 2,
+    "inputs": 0,
+    "links": 0,
+    "actions": [
+      {
+        "id": "try-again-1",
+        "kind": "button",
+        "label": "Try Again",
+        "index": 0
+      },
+      {
+        "id": "main-menu-2",
+        "kind": "button",
+        "label": "Main Menu",
+        "index": 1
+      }
+    ]
+  },
+  {
+    "screenId": "cff2f2dde633449ba8957e50397321c1",
+    "title": "Game Board",
+    "componentName": "GameBoard",
+    "file": "src/screens/GameBoard.tsx",
+    "buttons": 4,
+    "inputs": 0,
+    "links": 4,
+    "actions": [
+      {
+        "id": "pause-1",
+        "kind": "button",
+        "label": "PAUSE",
+        "index": 0
+      },
+      {
+        "id": "reset-2",
+        "kind": "button",
+        "label": "RESET",
+        "index": 1
+      },
+      {
+        "id": "button-3-3",
+        "kind": "button",
+        "label": "Button 3",
+        "index": 2
+      },
+      {
+        "id": "button-4-4",
+        "kind": "button",
+        "label": "Button 4",
+        "index": 3
+      },
+      {
+        "id": "game-1",
+        "kind": "link",
+        "label": "GAME",
+        "href": "#",
+        "index": 0
+      },
+      {
+        "id": "levels-2",
+        "kind": "link",
+        "label": "LEVELS",
+        "href": "#",
+        "index": 1
+      },
+      {
+        "id": "status-3",
+        "kind": "link",
+        "label": "STATUS",
+        "href": "#",
+        "index": 2
+      },
+      {
+        "id": "menu-4",
+        "kind": "link",
+        "label": "MENU",
+        "href": "#",
+        "index": 3
+      }
+    ]
+  }
+]
