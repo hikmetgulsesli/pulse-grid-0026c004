@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Game Over - Pulse Grid</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@600;700&amp;family=Inter:wght@400&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary": "#d0bcff",
+                    "on-secondary-fixed-variant": "#5516be",
+                    "surface-dim": "#051426",
+                    "on-tertiary": "#2d3133",
+                    "primary": "#4cd7f6",
+                    "secondary-fixed": "#e9ddff",
+                    "tertiary": "#c4c7c9",
+                    "primary-container": "#06b6d4",
+                    "on-error-container": "#ffdad6",
+                    "tertiary-fixed": "#e0e3e5",
+                    "surface": "#051426",
+                    "on-surface-variant": "#bcc9cd",
+                    "surface-bright": "#2c3a4e",
+                    "inverse-primary": "#00687a",
+                    "tertiary-container": "#a4a7a9",
+                    "inverse-surface": "#d5e3fd",
+                    "surface-container-lowest": "#010f21",
+                    "on-surface": "#d5e3fd",
+                    "on-secondary-fixed": "#23005c",
+                    "error-container": "#93000a",
+                    "on-tertiary-fixed-variant": "#444749",
+                    "surface-container-low": "#0d1c2f",
+                    "outline": "#869397",
+                    "tertiary-fixed-dim": "#c4c7c9",
+                    "surface-container-high": "#1c2b3e",
+                    "secondary-container": "#571bc1",
+                    "inverse-on-surface": "#233144",
+                    "on-primary-container": "#00424f",
+                    "on-error": "#690005",
+                    "secondary-fixed-dim": "#d0bcff",
+                    "outline-variant": "#3d494c",
+                    "surface-container-highest": "#273649",
+                    "on-secondary-container": "#c4abff",
+                    "surface-container": "#122033",
+                    "primary-fixed": "#acedff",
+                    "on-primary-fixed": "#001f26",
+                    "on-tertiary-fixed": "#191c1e",
+                    "surface-variant": "#273649",
+                    "primary-fixed-dim": "#4cd7f6",
+                    "on-tertiary-container": "#393d3e",
+                    "background": "#051426",
+                    "on-secondary": "#3c0091",
+                    "on-primary": "#003640",
+                    "surface-tint": "#4cd7f6",
+                    "on-primary-fixed-variant": "#004e5c",
+                    "on-background": "#d5e3fd",
+                    "error": "#ffb4ab"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "component-padding-y": "0.75rem",
+                    "component-padding-x": "1.5rem",
+                    "margin-desktop": "32px",
+                    "margin-mobile": "16px",
+                    "grid-unit": "8px",
+                    "gutter": "16px"
+            },
+            "fontFamily": {
+                    "label-md": ["JetBrains Mono"],
+                    "data-display": ["JetBrains Mono"],
+                    "body-md": ["Inter"],
+                    "headline-sm": ["Geist"],
+                    "headline-md": ["Geist"],
+                    "body-lg": ["Inter"],
+                    "headline-lg": ["Geist"],
+                    "label-sm": ["JetBrains Mono"]
+            },
+            "fontSize": {
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "data-display": ["20px", {"lineHeight": "1.0", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-sm": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "headline-md": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.08em", "fontWeight": "500"}]
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen flex items-center justify-center p-gutter relative overflow-hidden">
+<!-- Subtle Grid Background Overlay for Theme Context -->
+<div class="absolute inset-0 pointer-events-none opacity-20" style="background-image: linear-gradient(to right, #334155 1px, transparent 1px), linear-gradient(to bottom, #334155 1px, transparent 1px); background-size: 32px 32px;"></div>
+<!-- Central Glow Element -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary opacity-10 blur-[100px] rounded-full pointer-events-none"></div>
+<!-- Main Results Glass Panel -->
+<main class="w-full max-w-2xl bg-surface-container/80 backdrop-blur-md border border-outline-variant p-8 relative z-10">
+<!-- Bracket Accents -->
+<div class="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-primary"></div>
+<div class="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-primary"></div>
+<!-- Header -->
+<header class="text-center mb-8">
+<p class="font-label-sm text-label-sm text-secondary tracking-widest mb-2 uppercase">Sequence Terminated</p>
+<h1 class="font-headline-lg text-headline-lg text-primary drop-shadow-[0_0_12px_rgba(76,215,246,0.6)] uppercase">Pulse Complete</h1>
+</header>
+<!-- Bento Stats Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+<!-- Final Score (Full Width) -->
+<div class="md:col-span-2 bg-surface-container-high border border-outline-variant p-6 flex flex-col items-center justify-center relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mb-2">Final Score</span>
+<span class="font-data-display text-data-display text-4xl text-on-surface tracking-wider drop-shadow-[0_0_8px_rgba(213,227,253,0.3)]">15,800</span>
+</div>
+<!-- Time Elapsed -->
+<div class="bg-surface-container-high border border-outline-variant p-4 flex flex-col justify-center">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-outline-variant text-sm">schedule</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Time Elapsed</span>
+</div>
+<span class="font-data-display text-data-display text-primary">04:30</span>
+</div>
+<!-- Nodes Optimized -->
+<div class="bg-surface-container-high border border-outline-variant p-4 flex flex-col justify-center">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-outline-variant text-sm">network_node</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Grid Nodes Optimized</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-data-display text-data-display text-primary">92%</span>
+<!-- Segmented Progress Bar -->
+<div class="flex-1 flex gap-1 h-2">
+<div class="flex-1 bg-primary drop-shadow-[0_0_4px_rgba(76,215,246,0.8)]"></div>
+<div class="flex-1 bg-primary drop-shadow-[0_0_4px_rgba(76,215,246,0.8)]"></div>
+<div class="flex-1 bg-primary drop-shadow-[0_0_4px_rgba(76,215,246,0.8)]"></div>
+<div class="flex-1 bg-primary drop-shadow-[0_0_4px_rgba(76,215,246,0.8)]"></div>
+<div class="flex-1 bg-primary drop-shadow-[0_0_4px_rgba(76,215,246,0.8)]"></div>
+<div class="flex-1 bg-primary drop-shadow-[0_0_4px_rgba(76,215,246,0.8)]"></div>
+<div class="flex-1 bg-primary drop-shadow-[0_0_4px_rgba(76,215,246,0.8)]"></div>
+<div class="flex-1 bg-primary drop-shadow-[0_0_4px_rgba(76,215,246,0.8)]"></div>
+<div class="flex-1 bg-primary drop-shadow-[0_0_4px_rgba(76,215,246,0.8)]"></div>
+<div class="flex-1 bg-surface-variant"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Local High Score Comparison -->
+<div class="bg-surface-container-lowest border-l-4 border-secondary p-4 mb-8 flex justify-between items-center">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Local High Score</span>
+<span class="font-body-sm text-body-sm text-on-surface">16,200</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-sm text-label-sm text-outline">Delta</span>
+<span class="font-label-md text-label-md text-error">-400</span>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="flex-1 bg-primary text-on-primary font-label-md text-label-md py-component-padding-y px-component-padding-x flex items-center justify-center gap-2 hover:bg-primary-fixed hover:drop-shadow-[0_0_15px_rgba(76,215,246,0.5)] transition-all uppercase tracking-wider relative overflow-hidden group">
+<div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">replay</span>
+<span class="relative z-10">Try Again</span>
+</button>
+<button class="flex-1 border border-outline-variant bg-surface text-on-surface font-label-md text-label-md py-component-padding-y px-component-padding-x flex items-center justify-center gap-2 hover:bg-surface-bright hover:border-outline transition-colors uppercase tracking-wider">
+<span class="material-symbols-outlined text-sm">home</span>
+                Main Menu
+            </button>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pulse Grid - Main Menu</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@600;700&amp;family=Inter:wght@400&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary": "#d0bcff",
+                    "on-secondary-fixed-variant": "#5516be",
+                    "surface-dim": "#051426",
+                    "on-tertiary": "#2d3133",
+                    "primary": "#4cd7f6",
+                    "secondary-fixed": "#e9ddff",
+                    "tertiary": "#c4c7c9",
+                    "primary-container": "#06b6d4",
+                    "on-error-container": "#ffdad6",
+                    "tertiary-fixed": "#e0e3e5",
+                    "surface": "#051426",
+                    "on-surface-variant": "#bcc9cd",
+                    "surface-bright": "#2c3a4e",
+                    "inverse-primary": "#00687a",
+                    "tertiary-container": "#a4a7a9",
+                    "inverse-surface": "#d5e3fd",
+                    "surface-container-lowest": "#010f21",
+                    "on-surface": "#d5e3fd",
+                    "on-secondary-fixed": "#23005c",
+                    "error-container": "#93000a",
+                    "on-tertiary-fixed-variant": "#444749",
+                    "surface-container-low": "#0d1c2f",
+                    "outline": "#869397",
+                    "tertiary-fixed-dim": "#c4c7c9",
+                    "surface-container-high": "#1c2b3e",
+                    "secondary-container": "#571bc1",
+                    "inverse-on-surface": "#233144",
+                    "on-primary-container": "#00424f",
+                    "on-error": "#690005",
+                    "secondary-fixed-dim": "#d0bcff",
+                    "outline-variant": "#3d494c",
+                    "surface-container-highest": "#273649",
+                    "on-secondary-container": "#c4abff",
+                    "surface-container": "#122033",
+                    "primary-fixed": "#acedff",
+                    "on-primary-fixed": "#001f26",
+                    "on-tertiary-fixed": "#191c1e",
+                    "surface-variant": "#273649",
+                    "primary-fixed-dim": "#4cd7f6",
+                    "on-tertiary-container": "#393d3e",
+                    "background": "#051426",
+                    "on-secondary": "#3c0091",
+                    "on-primary": "#003640",
+                    "surface-tint": "#4cd7f6",
+                    "on-primary-fixed-variant": "#004e5c",
+                    "on-background": "#d5e3fd",
+                    "error": "#ffb4ab"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "component-padding-y": "0.75rem",
+                    "component-padding-x": "1.5rem",
+                    "margin-desktop": "32px",
+                    "margin-mobile": "16px",
+                    "grid-unit": "8px",
+                    "gutter": "16px"
+            },
+            "fontFamily": {
+                    "label-md": ["JetBrains Mono"],
+                    "data-display": ["JetBrains Mono"],
+                    "body-md": ["Inter"],
+                    "headline-sm": ["Geist"],
+                    "headline-md": ["Geist"],
+                    "body-lg": ["Inter"],
+                    "headline-lg": ["Geist"],
+                    "label-sm": ["JetBrains Mono"]
+            },
+            "fontSize": {
+                    "label-md": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                    "data-display": ["20px", { "lineHeight": "1.0", "fontWeight": "700" }],
+                    "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                    "headline-sm": ["24px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                    "headline-md": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                    "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                    "headline-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                    "label-sm": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.08em", "fontWeight": "500" }]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        /* Cyber-Technical Minimalism Grid Background */
+        body {
+            background-color: #051426; /* bg-background */
+            background-image: 
+                linear-gradient(to right, rgba(61, 73, 76, 0.15) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(61, 73, 76, 0.15) 1px, transparent 1px);
+            background-size: 32px 32px;
+            background-position: center top;
+        }
+
+        /* Bracket Card Style Utility */
+        .bracket-border {
+            position: relative;
+        }
+        .bracket-border::before,
+        .bracket-border::after {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-color: #4cd7f6; /* text-primary */
+            border-style: solid;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+        .bracket-border::before {
+            top: -1px;
+            left: -1px;
+            border-width: 1px 0 0 1px;
+        }
+        .bracket-border::after {
+            bottom: -1px;
+            right: -1px;
+            border-width: 0 1px 1px 0;
+        }
+        
+        .bracket-border:hover::before,
+        .bracket-border:hover::after {
+            width: 12px;
+            height: 12px;
+            border-width: 2px 0 0 2px;
+        }
+        .bracket-border:hover::after {
+            border-width: 0 2px 2px 0;
+        }
+    </style>
+</head>
+<body class="text-on-background min-h-screen flex flex-col font-body-md overflow-hidden relative">
+<!-- TopAppBar -->
+<header class="bg-surface text-primary flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop h-16 z-50 fixed top-0 left-0 border-b border-outline-variant shadow-[0_0_15px_rgba(5,20,38,0.8)]">
+<div class="flex items-center gap-4">
+<button class="text-primary hover:text-primary-fixed hover:bg-surface-bright transition-colors rounded-full p-2 flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+</button>
+<h1 class="font-headline-sm text-headline-sm font-bold tracking-tighter text-primary drop-shadow-[0_0_8px_rgba(76,215,246,0.6)] uppercase">
+                PULSE_GRID
+            </h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="text-primary hover:text-primary-fixed hover:bg-surface-bright transition-colors rounded-full p-2 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<button class="text-primary hover:text-primary-fixed hover:bg-surface-bright transition-colors rounded-full p-2 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col items-center justify-center relative z-10 pt-16 pb-24 px-gutter w-full max-w-7xl mx-auto">
+<!-- Prominent Logo Area -->
+<div class="mb-16 text-center flex flex-col items-center">
+<div class="w-16 h-16 mb-6 border border-primary flex items-center justify-center bracket-border shadow-[0_0_20px_rgba(76,215,246,0.3)] bg-surface/50 backdrop-blur-sm">
+<span class="material-symbols-outlined text-4xl text-primary drop-shadow-[0_0_8px_rgba(76,215,246,0.8)]" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg uppercase text-on-surface drop-shadow-[0_0_15px_rgba(213,227,253,0.3)] tracking-widest">
+                Pulse Grid
+            </h2>
+<p class="font-label-md text-label-md text-primary mt-2 uppercase opacity-80">System Ready // Awaiting Input</p>
+</div>
+<!-- Central Vertical Stack of Buttons -->
+<div class="flex flex-col gap-5 w-full max-w-sm">
+<!-- Primary Action -->
+<button class="group relative w-full bg-primary-container text-on-primary-container py-4 px-6 rounded-DEFAULT font-headline-sm text-headline-sm flex items-center justify-center gap-3 transition-all duration-300 hover:brightness-110 hover:shadow-[0_0_25px_rgba(6,182,212,0.6)] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+<span class="uppercase tracking-wide">Start Game</span>
+</button>
+<!-- Secondary Action -->
+<button class="w-full bg-surface-container-high border border-outline-variant text-on-surface py-4 px-6 rounded-DEFAULT font-headline-sm text-headline-sm flex items-center justify-center gap-3 transition-all duration-300 hover:border-primary hover:text-primary hover:bg-surface-container-highest hover:shadow-[0_0_15px_rgba(76,215,246,0.2)] focus:outline-none bracket-border">
+<span class="material-symbols-outlined">restore</span>
+<span class="uppercase tracking-wide">Resume Session</span>
+</button>
+<!-- Tertiary Actions -->
+<div class="grid grid-cols-2 gap-5 mt-2">
+<button class="w-full bg-surface border border-outline-variant text-on-surface-variant py-3 px-4 rounded-DEFAULT font-label-md text-label-md flex flex-col items-center justify-center gap-2 transition-all duration-300 hover:border-tertiary hover:text-on-surface hover:bg-surface-bright focus:outline-none">
+<span class="material-symbols-outlined">school</span>
+<span class="uppercase">Tutorial</span>
+</button>
+<button class="w-full bg-surface border border-outline-variant text-on-surface-variant py-3 px-4 rounded-DEFAULT font-label-md text-label-md flex flex-col items-center justify-center gap-2 transition-all duration-300 hover:border-error hover:text-error hover:bg-surface-bright hover:shadow-[0_0_15px_rgba(255,180,171,0.2)] focus:outline-none">
+<span class="material-symbols-outlined">logout</span>
+<span class="uppercase">Exit</span>
+</button>
+</div>
+</div>
+<!-- Ambient Tech Details -->
+<div class="absolute bottom-32 left-margin-desktop hidden md:flex flex-col gap-1 font-label-sm text-label-sm text-on-surface-variant opacity-50">
+<span>SYS.VER // 2.4.01</span>
+<span>NODE // ACTIVE</span>
+<span>PING // 12ms</span>
+</div>
+<div class="absolute bottom-32 right-margin-desktop hidden md:flex flex-col items-end gap-1 font-label-sm text-label-sm text-on-surface-variant opacity-50">
+<span>ENCRYPTION // STANDARD</span>
+<span>USER // GUEST_774</span>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-gutter py-2 bg-surface-container/80 backdrop-blur-md border-t border-outline-variant">
+<!-- Inactive Tab: GAME -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:opacity-100 hover:text-primary transition-all w-16">
+<span class="material-symbols-outlined mb-1" data-icon="videogame_asset">videogame_asset</span>
+<span class="font-label-sm text-label-sm">GAME</span>
+</button>
+<!-- Inactive Tab: LEVELS -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:opacity-100 hover:text-primary transition-all w-16">
+<span class="material-symbols-outlined mb-1" data-icon="format_list_numbered">format_list_numbered</span>
+<span class="font-label-sm text-label-sm">LEVELS</span>
+</button>
+<!-- Inactive Tab: STATUS -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:opacity-100 hover:text-primary transition-all w-16">
+<span class="material-symbols-outlined mb-1" data-icon="analytics">analytics</span>
+<span class="font-label-sm text-label-sm">STATUS</span>
+</button>
+<!-- Active Tab: MENU -->
+<button class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-6 py-1 shadow-[0_0_15px_rgba(6,182,212,0.4)] scale-90 brightness-125 transition-all">
+<span class="material-symbols-outlined mb-1" data-icon="menu" style="font-variation-settings: 'FILL' 1;">menu</span>
+<span class="font-label-sm text-label-sm font-bold">MENU</span>
+</button>
+</nav>
+</body></html>

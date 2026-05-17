@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Game Options</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400..700&amp;family=Inter:wght@400..700&amp;family=JetBrains+Mono:wght@400..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary": "#d0bcff",
+                      "on-secondary-fixed-variant": "#5516be",
+                      "surface-dim": "#051426",
+                      "on-tertiary": "#2d3133",
+                      "primary": "#4cd7f6",
+                      "secondary-fixed": "#e9ddff",
+                      "tertiary": "#c4c7c9",
+                      "primary-container": "#06b6d4",
+                      "on-error-container": "#ffdad6",
+                      "tertiary-fixed": "#e0e3e5",
+                      "surface": "#051426",
+                      "on-surface-variant": "#bcc9cd",
+                      "surface-bright": "#2c3a4e",
+                      "inverse-primary": "#00687a",
+                      "tertiary-container": "#a4a7a9",
+                      "inverse-surface": "#d5e3fd",
+                      "surface-container-lowest": "#010f21",
+                      "on-surface": "#d5e3fd",
+                      "on-secondary-fixed": "#23005c",
+                      "error-container": "#93000a",
+                      "on-tertiary-fixed-variant": "#444749",
+                      "surface-container-low": "#0d1c2f",
+                      "outline": "#869397",
+                      "tertiary-fixed-dim": "#c4c7c9",
+                      "surface-container-high": "#1c2b3e",
+                      "secondary-container": "#571bc1",
+                      "inverse-on-surface": "#233144",
+                      "on-primary-container": "#00424f",
+                      "on-error": "#690005",
+                      "secondary-fixed-dim": "#d0bcff",
+                      "outline-variant": "#3d494c",
+                      "surface-container-highest": "#273649",
+                      "on-secondary-container": "#c4abff",
+                      "surface-container": "#122033",
+                      "primary-fixed": "#acedff",
+                      "on-primary-fixed": "#001f26",
+                      "on-tertiary-fixed": "#191c1e",
+                      "surface-variant": "#273649",
+                      "primary-fixed-dim": "#4cd7f6",
+                      "on-tertiary-container": "#393d3e",
+                      "background": "#051426",
+                      "on-secondary": "#3c0091",
+                      "on-primary": "#003640",
+                      "surface-tint": "#4cd7f6",
+                      "on-primary-fixed-variant": "#004e5c",
+                      "on-background": "#d5e3fd",
+                      "error": "#ffb4ab"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "component-padding-y": "0.75rem",
+                      "component-padding-x": "1.5rem",
+                      "margin-desktop": "32px",
+                      "margin-mobile": "16px",
+                      "grid-unit": "8px",
+                      "gutter": "16px"
+              },
+              "fontFamily": {
+                      "label-md": [
+                              "JetBrains Mono"
+                      ],
+                      "data-display": [
+                              "JetBrains Mono"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "headline-sm": [
+                              "Geist"
+                      ],
+                      "headline-md": [
+                              "Geist"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "label-sm": [
+                              "JetBrains Mono"
+                      ]
+              },
+              "fontSize": {
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "data-display": [
+                              "20px",
+                              {
+                                      "lineHeight": "1.0",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-sm": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "0.08em",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- Canvas (Main Content) -->
+<main class="flex-grow flex items-center justify-center p-margin-mobile md:p-margin-desktop w-full relative z-10 pt-20 pb-24 md:py-margin-desktop overflow-hidden">
+<!-- Grid Background Pattern -->
+<div class="absolute inset-0 pointer-events-none opacity-20" style="background-image: linear-gradient(to right, #334155 1px, transparent 1px), linear-gradient(to bottom, #334155 1px, transparent 1px); background-size: 32px 32px;"></div>
+<!-- Settings Panel -->
+<div class="w-full max-w-3xl bg-surface-container border border-outline-variant rounded-xl p-6 md:p-10 relative shadow-[0_0_40px_rgba(5,20,38,0.8)] backdrop-blur-md">
+<!-- Bracket Accents -->
+<div class="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-primary rounded-tl-xl"></div>
+<div class="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-primary rounded-br-xl"></div>
+<div class="mb-8 border-b border-outline-variant pb-4">
+<h1 class="font-headline-md text-headline-md text-primary tracking-tight">System Settings</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Configure simulation parameters.</p>
+</div>
+<form class="space-y-8">
+<!-- Toggles Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Audio Settings -->
+<div class="bg-surface-container-low p-5 rounded-lg border border-outline-variant/50">
+<h2 class="font-label-md text-label-md text-secondary uppercase mb-4 tracking-widest flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">volume_up</span> Audio
+                        </h2>
+<div class="space-y-4">
+<label class="flex items-center justify-between cursor-pointer group">
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Music</span>
+<div class="relative">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary peer-checked:shadow-[0_0_10px_rgba(76,215,246,0.6)]"></div>
+</div>
+</label>
+<label class="flex items-center justify-between cursor-pointer group">
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Sound Effects</span>
+<div class="relative">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary peer-checked:shadow-[0_0_10px_rgba(76,215,246,0.6)]"></div>
+</div>
+</label>
+</div>
+</div>
+<!-- Visual Settings -->
+<div class="bg-surface-container-low p-5 rounded-lg border border-outline-variant/50">
+<h2 class="font-label-md text-label-md text-secondary uppercase mb-4 tracking-widest flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">visibility</span> Visuals
+                        </h2>
+<div class="space-y-4">
+<label class="flex items-center justify-between cursor-pointer group">
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Screen Shake</span>
+<div class="relative">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary peer-checked:shadow-[0_0_10px_rgba(76,215,246,0.6)]"></div>
+</div>
+</label>
+<div class="pt-2">
+<label class="block font-body-md text-body-md text-on-surface mb-2">Simulation Speed</label>
+<input class="w-full h-1 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary" max="100" min="0" type="range" value="75"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Simulation Params -->
+<div class="bg-surface-container-low p-5 rounded-lg border border-outline-variant/50">
+<h2 class="font-label-md text-label-md text-secondary uppercase mb-4 tracking-widest flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">memory</span> Simulation
+                    </h2>
+<div class="mb-4">
+<label class="block font-body-md text-body-md text-on-surface mb-2">Difficulty Protocol</label>
+<div class="relative">
+<select class="block w-full bg-surface border-b-2 border-outline-variant text-on-surface py-3 px-4 focus:outline-none focus:border-primary focus:shadow-[0_4px_10px_-4px_rgba(76,215,246,0.5)] appearance-none transition-all cursor-pointer font-label-md text-label-md">
+<option value="easy">Training (Easy)</option>
+<option selected="" value="normal">Standard (Normal)</option>
+<option value="hard">Overdrive (Hard)</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-on-surface-variant">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Keyboard Remapping Preview -->
+<div class="bg-surface-container-low p-5 rounded-lg border border-outline-variant/50">
+<h2 class="font-label-md text-label-md text-secondary uppercase mb-4 tracking-widest flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">keyboard</span> Keybinds
+                    </h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="bg-surface p-3 rounded border border-outline-variant flex flex-col items-center justify-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant mb-1">Up</span>
+<kbd class="font-data-display text-data-display text-primary bg-surface-container-highest px-3 py-1 rounded border border-outline-variant/50 shadow-[0_2px_0_rgba(61,73,76,1)]">W</kbd>
+</div>
+<div class="bg-surface p-3 rounded border border-outline-variant flex flex-col items-center justify-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant mb-1">Left</span>
+<kbd class="font-data-display text-data-display text-primary bg-surface-container-highest px-3 py-1 rounded border border-outline-variant/50 shadow-[0_2px_0_rgba(61,73,76,1)]">A</kbd>
+</div>
+<div class="bg-surface p-3 rounded border border-outline-variant flex flex-col items-center justify-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant mb-1">Down</span>
+<kbd class="font-data-display text-data-display text-primary bg-surface-container-highest px-3 py-1 rounded border border-outline-variant/50 shadow-[0_2px_0_rgba(61,73,76,1)]">S</kbd>
+</div>
+<div class="bg-surface p-3 rounded border border-outline-variant flex flex-col items-center justify-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant mb-1">Right</span>
+<kbd class="font-data-display text-data-display text-primary bg-surface-container-highest px-3 py-1 rounded border border-outline-variant/50 shadow-[0_2px_0_rgba(61,73,76,1)]">D</kbd>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex justify-end gap-4 mt-8 pt-6 border-t border-outline-variant">
+<button class="px-6 py-3 font-label-md text-label-md text-on-surface bg-transparent border border-outline-variant hover:bg-surface-bright rounded transition-colors focus:outline-none focus:ring-2 focus:ring-primary" type="button">
+                        Cancel
+                    </button>
+<button class="px-8 py-3 font-label-md text-label-md text-surface bg-primary hover:bg-primary-fixed rounded shadow-[0_0_15px_rgba(6,182,212,0.4)] hover:shadow-[0_0_25px_rgba(6,182,212,0.6)] transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-surface focus:ring-primary" type="button">
+                        Apply Changes
+                    </button>
+</div>
+</form>
+</div>
+</main>
+</body></html>
