@@ -126,19 +126,19 @@ export function GameBoard({ actions }: GameBoardProps) {
       </main>
       {/* BottomNavBar */}
       <nav className="md:hidden bg-surface-container dark:bg-surface-container text-primary dark:text-primary docked full-width bottom-0 rounded-t-xl flat no shadows border-t border-outline-variant fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-gutter py-2 bg-surface-container/80 backdrop-blur-md">
-      <a className="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-6 py-1 shadow-[0_0_15px_rgba(6,182,212,0.4)] hover:text-primary transition-colors scale-95 duration-100 ease-in-out" href="#" data-action-id="game-1" onClick={actions?.["game-1"]}>
+      <a className="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-6 py-1 shadow-[0_0_15px_rgba(6,182,212,0.4)] hover:text-primary transition-colors scale-95 duration-100 ease-in-out" href="#game" data-action-id="game-1" onClick={actions?.["game-1"]}>
       <Gamepad2 data-weight="fill" style={{fontVariationSettings: "'FILL' 1"}} aria-hidden={true} focusable="false" />
       <span className="font-label-sm text-label-sm mt-1">GAME</span>
       </a>
-      <a className="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:opacity-100 hover:text-primary transition-colors" href="#" data-action-id="levels-2" onClick={actions?.["levels-2"]}>
+      <a className="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:opacity-100 hover:text-primary transition-colors" href="#levels" data-action-id="levels-2" onClick={actions?.["levels-2"]}>
       <Circle aria-hidden={true} focusable="false" />
       <span className="font-label-sm text-label-sm mt-1">LEVELS</span>
       </a>
-      <a className="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:opacity-100 hover:text-primary transition-colors" href="#" data-action-id="status-3" onClick={actions?.["status-3"]}>
+      <a className="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:opacity-100 hover:text-primary transition-colors" href="#status" data-action-id="status-3" onClick={actions?.["status-3"]}>
       <Circle aria-hidden={true} focusable="false" />
       <span className="font-label-sm text-label-sm mt-1">STATUS</span>
       </a>
-      <a className="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:opacity-100 hover:text-primary transition-colors" href="#" data-action-id="menu-4" onClick={actions?.["menu-4"]}>
+      <a className="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:opacity-100 hover:text-primary transition-colors" href="#menu" data-action-id="menu-4" onClick={actions?.["menu-4"]}>
       <Menu aria-hidden={true} focusable="false" />
       <span className="font-label-sm text-label-sm mt-1">MENU</span>
       </a>
