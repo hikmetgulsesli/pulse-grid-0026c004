@@ -11,6 +11,15 @@
     linear-gradient(135deg, #f8fafc 0%, #e9f2ef 54%, #eef1f8 100%);
 }
 
+.stitch-shell {
+  display: flex;
+  padding: 0;
+  color: var(--color-on-surface);
+  background:
+    radial-gradient(circle at 18% 12%, rgba(76, 215, 246, 0.18), transparent 24rem),
+    linear-gradient(135deg, var(--color-surface-container-lowest), var(--color-background));
+}
+
 .pulse-panel {
   width: min(100%, 980px);
   margin: 0 auto 1rem;

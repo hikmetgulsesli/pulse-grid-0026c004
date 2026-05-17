@@ -16,7 +16,11 @@ export type Tile = Position & {
 };
 
 export type GameSettings = {
-  sound: boolean;
+  music: boolean;
+  soundEffects: boolean;
+  screenShake: boolean;
+  simulationSpeed: number;
+  difficulty: 'easy' | 'normal' | 'hard';
   gridSize: number;
 };
 
