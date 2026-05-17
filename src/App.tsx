@@ -1,5 +1,6 @@
 import { AppProvider, useAppContext } from './contexts/AppContext';
 import { GameBoard } from './screens/GameBoard';
+import { MainMenu } from './screens/MainMenu';
 import './App.css';
 
 function formatTime(seconds: number) {
@@ -14,7 +15,7 @@ function PulseGridApp() {
   const { state, actions } = useAppContext();
 
   return (
-    <main className="pulse-shell" aria-label="Pulse Grid game">
+    <div className="pulse-shell" aria-label="Pulse Grid game">
       <section className="pulse-panel pulse-hero">
         <div>
           <p className="eyebrow">Signal routing puzzle</p>
@@ -29,20 +30,21 @@ function PulseGridApp() {
       </section>
 
       {state.screen === 'menu' && (
-        <section className="pulse-panel menu-panel" aria-label="Main menu">
-          <button type="button" className="primary-action" onClick={actions.startGame}>
-            Start Game
-          </button>
-          <button type="button" onClick={actions.resumeGame} disabled={!state.moves}>
-            Resume Session
-          </button>
-          <button type="button" onClick={actions.showHelp}>
-            Tutorial
-          </button>
-          <button type="button" onClick={actions.showSettings}>
-            Settings
-          </button>
-        </section>
+        <MainMenu
+          actions={{
+            'button-1-1': actions.backToMenu,
+            'button-2-2': actions.showSettings,
+            'button-3-3': actions.showHelp,
+            'start-game-4': actions.startGame,
+            'resume-session-5': actions.resumeGame,
+            'tutorial-6': actions.showHelp,
+            'exit-7': actions.backToMenu,
+            'game-8': actions.startGame,
+            'levels-9': actions.showSettings,
+            'status-10': actions.showHelp,
+            'menu-11': actions.backToMenu,
+          }}
+        />
       )}
 
       {state.screen === 'game' && (
@@ -116,7 +118,7 @@ function PulseGridApp() {
           </button>
         </section>
       )}
-    </main>
+    </div>
   );
 }
 
