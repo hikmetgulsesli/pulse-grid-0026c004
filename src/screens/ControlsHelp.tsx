@@ -77,8 +77,8 @@ export function ControlsHelp({ actions }: ControlsHelpProps) {
       <div className="flex items-center gap-4 bg-surface px-4 py-3 rounded-lg border border-outline-variant/50">
       <Circle className="text-3xl text-tertiary" aria-hidden={true} focusable="false" />
       <div>
-      <div className="font-label-md text-label-md text-on-surface">Swipe Vector</div>
-      <div className="font-label-sm text-label-sm text-on-surface-variant uppercase">Translate</div>
+      <div className="font-label-md text-label-md text-on-surface">Tap Node</div>
+      <div className="font-label-sm text-label-sm text-on-surface-variant uppercase">Rotate</div>
       </div>
       </div>
       <div className="flex items-center gap-4 bg-surface px-4 py-3 rounded-lg border border-outline-variant/50">

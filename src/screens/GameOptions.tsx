@@ -8,15 +8,40 @@
 // 4. Replace placeholder data with props/state
 
 import { Circle } from "lucide-react";
+import type { ChangeEvent } from "react";
+import type { GameSettings } from "../types/domain";
 
 
 export type GameOptionsActionId = "cancel-1" | "apply-changes-2";
 
 export interface GameOptionsProps {
   actions?: Partial<Record<GameOptionsActionId, () => void>>;
+  settings?: GameSettings;
+  onSettingsChange?: (settings: GameSettings) => void;
 }
 
-export function GameOptions({ actions }: GameOptionsProps) {
+const fallbackSettings: GameSettings = {
+  music: true,
+  soundEffects: true,
+  screenShake: false,
+  simulationSpeed: 75,
+  difficulty: "normal",
+  gridSize: 5,
+};
+
+export function GameOptions({ actions, settings = fallbackSettings, onSettingsChange }: GameOptionsProps) {
+  const updateSettings = (settingsPatch: Partial<GameSettings>) => {
+    onSettingsChange?.({ ...settings, ...settingsPatch });
+  };
+
+  const handleSimulationSpeedChange = (event: ChangeEvent<HTMLInputElement>) => {
+    updateSettings({ simulationSpeed: Number(event.currentTarget.value) });
+  };
+
+  const handleDifficultyChange = (event: ChangeEvent<HTMLSelectElement>) => {
+    updateSettings({ difficulty: event.currentTarget.value as GameSettings["difficulty"] });
+  };
+
   return (
     <>
       {/* Canvas (Main Content) */}
@@ -44,14 +69,14 @@ export function GameOptions({ actions }: GameOptionsProps) {
       <label className="flex items-center justify-between cursor-pointer group">
       <span className="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Music</span>
       <div className="relative">
-      <input checked={true} className="sr-only peer" type="checkbox" />
+      <input checked={settings.music} className="sr-only peer" type="checkbox" onChange={(event) => updateSettings({ music: event.currentTarget.checked })} />
       <div className="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary peer-checked:shadow-[0_0_10px_rgba(76,215,246,0.6)]"></div>
       </div>
       </label>
       <label className="flex items-center justify-between cursor-pointer group">
       <span className="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Sound Effects</span>
       <div className="relative">
-      <input checked={true} className="sr-only peer" type="checkbox" />
+      <input checked={settings.soundEffects} className="sr-only peer" type="checkbox" onChange={(event) => updateSettings({ soundEffects: event.currentTarget.checked })} />
       <div className="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary peer-checked:shadow-[0_0_10px_rgba(76,215,246,0.6)]"></div>
       </div>
       </label>
@@ -66,13 +91,13 @@ export function GameOptions({ actions }: GameOptionsProps) {
       <label className="flex items-center justify-between cursor-pointer group">
       <span className="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Screen Shake</span>
       <div className="relative">
-      <input className="sr-only peer" type="checkbox" />
+      <input checked={settings.screenShake} className="sr-only peer" type="checkbox" onChange={(event) => updateSettings({ screenShake: event.currentTarget.checked })} />
       <div className="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary peer-checked:shadow-[0_0_10px_rgba(76,215,246,0.6)]"></div>
       </div>
       </label>
       <div className="pt-2">
       <label className="block font-body-md text-body-md text-on-surface mb-2">Simulation Speed</label>
-      <input className="w-full h-1 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary" max="100" min="0" type="range" value="75" />
+      <input className="w-full h-1 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary" max="100" min="0" type="range" value={settings.simulationSpeed} onChange={handleSimulationSpeedChange} />
       </div>
       </div>
       </div>
@@ -85,9 +110,9 @@ export function GameOptions({ actions }: GameOptionsProps) {
       <div className="mb-4">
       <label className="block font-body-md text-body-md text-on-surface mb-2">Difficulty Protocol</label>
       <div className="relative">
-      <select className="block w-full bg-surface border-b-2 border-outline-variant text-on-surface py-3 px-4 focus:outline-none focus:border-primary focus:shadow-[0_4px_10px_-4px_rgba(76,215,246,0.5)] appearance-none transition-colors cursor-pointer font-label-md text-label-md">
+      <select className="block w-full bg-surface border-b-2 border-outline-variant text-on-surface py-3 px-4 focus:outline-none focus:border-primary focus:shadow-[0_4px_10px_-4px_rgba(76,215,246,0.5)] appearance-none transition-colors cursor-pointer font-label-md text-label-md" value={settings.difficulty} onChange={handleDifficultyChange}>
       <option value="easy">Training (Easy)</option>
-      <option selected={true} value="normal">Standard (Normal)</option>
+      <option value="normal">Standard (Normal)</option>
       <option value="hard">Overdrive (Hard)</option>
       </select>
       <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-on-surface-variant">
