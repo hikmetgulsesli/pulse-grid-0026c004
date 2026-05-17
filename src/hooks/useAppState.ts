@@ -14,11 +14,7 @@ type GameAction =
   | { type: 'tick' };
 
 const defaultSettings: GameSettings = {
-  music: true,
-  soundEffects: true,
-  screenShake: false,
-  simulationSpeed: 75,
-  difficulty: 'normal',
+  sound: true,
   gridSize: 5,
 };
 
@@ -204,16 +200,11 @@ export function useAppState() {
       if (event.key === 'ArrowDown') actions.moveSelection(1, 0);
       if (event.key === 'ArrowLeft') actions.moveSelection(0, -1);
       if (event.key === 'ArrowRight') actions.moveSelection(0, 1);
-      if (event.key.toLowerCase() === 'w') actions.moveSelection(-1, 0);
-      if (event.key.toLowerCase() === 's') actions.moveSelection(1, 0);
-      if (event.key.toLowerCase() === 'a') actions.moveSelection(0, -1);
-      if (event.key.toLowerCase() === 'd') actions.moveSelection(0, 1);
       if (event.key === 'Enter' || event.key === ' ') {
         event.preventDefault();
         actions.rotateTile(state.selected.row, state.selected.col);
       }
       if (event.key.toLowerCase() === 'p') actions.pauseGame();
-      if (event.key.toLowerCase() === 'r') actions.resetLevel();
     },
     [actions, state.screen, state.selected.col, state.selected.row],
   );
